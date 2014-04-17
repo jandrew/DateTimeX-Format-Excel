@@ -258,9 +258,9 @@ time component all values will fall between 0 and 1 which is a non real date
 
 =head2 Caveat utilitor
 
-This explanation is not intended to justify Microsofts decisions with excel 
+This explanation is not intended to justify Microsofts decisions with Excel 
 dates just replicate them as faithfully as possible.  This module makes the 
-assumption that you already know if your date is a string or a number in excel 
+assumption that you already know if your date is a string or a number in Excel 
 and that you will handle string to DateTime conversions elsewhere. see 
 L<DateTime::Format::Flexible>.  Any passed strings will die.  (As a failure 
 of a L<Type::Tiny> test)  This module also makes several unilateral decisions 
@@ -372,7 +372,10 @@ B<Returns:> An excel epoch number or DateTime object if it is before the relevan
 
 =head1 THANKS
 
-Dave Rolsky (DROLSKY) for kickstarting the DateTime project.
+Dave Rolsky (L<DROLSKY>) for kickstarting the DateTime project.
+Iain Truskett, Dave Rolsky, and Achim Bursian for maintaining L<DateTime::Format::Excel>.
+	I used it heavily till I wrote this.
+Peter (Stig) Edwards and Bobby Metz for contributing to L<DateTime::Format::Excel>.
 
 =head1 SUPPORT
 
