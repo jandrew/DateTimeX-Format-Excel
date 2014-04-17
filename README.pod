@@ -9,23 +9,23 @@ Microsofty conversion of Excel epochs
 
 	# From an Excel date number
 
-	my		$parser = DateTimeX::Format::Excel->new();
+	my	$parser = DateTimeX::Format::Excel->new();
 	print	$parser->parse_datetime( 25569 )->ymd ."\n";
-	my		$datetime = $parser->parse_datetime( 37680 );
+	my	$datetime = $parser->parse_datetime( 37680 );
 	print	$datetime->ymd() ."\n";
-			$datetime = $parser->parse_datetime( 40123.625 );
+		$datetime = $parser->parse_datetime( 40123.625 );
 	print	$datetime->iso8601() ."\n";
 
 	# And back to an Excel number from a DateTime object
 
 	use DateTime;
-	my		$dt = DateTime->new( year => 1979, month => 7, day => 16 );
-	my		$daynum = $parser->format_datetime( $dt );
+	my	$dt = DateTime->new( year => 1979, month => 7, day => 16 );
+	my	$daynum = $parser->format_datetime( $dt );
 	print 	$daynum ."\n";
 
-	my 		$dt_with_time = DateTime->new( year => 2010, month => 7, day => 23
+	my 	$dt_with_time = DateTime->new( year => 2010, month => 7, day => 23
 									, hour => 18, minute => 20 );
-	my 		$parser_date = $parser->format_datetime( $dt_with_time );
+	my 	$parser_date = $parser->format_datetime( $dt_with_time );
 	print 	$parser_date ."\n";
 	
 	###########################
