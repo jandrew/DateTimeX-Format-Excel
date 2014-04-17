@@ -1,0 +1,83 @@
+
+use strict;
+use warnings;
+
+
+
+use ExtUtils::MakeMaker 6.30;
+
+
+
+my %WriteMakefileArgs = (
+  "ABSTRACT" => "Microsofty conversion of Excel epochs\r",
+  "AUTHOR" => "Jed Lund <jandrew\@cpan.org>",
+  "BUILD_REQUIRES" => {},
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
+  },
+  "DISTNAME" => "DateTimeX-Format-Excel",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "DateTimeX::Format::Excel",
+  "PREREQ_PM" => {
+    "Carp" => 0,
+    "DateTime" => 0,
+    "Moose" => 0,
+    "MooseX::HasDefaults::RO" => 0,
+    "MooseX::StrictConstructor" => 0,
+    "Smart::Comments" => 0,
+    "Type::Library" => 0,
+    "Type::Utils" => 0,
+    "Types::Standard" => 0,
+    "lib" => 0,
+    "version" => 0
+  },
+  "TEST_REQUIRES" => {
+    "Capture::Tiny" => 0,
+    "TAP::Harness" => 0,
+    "Test::Moose" => 0,
+    "Test::More" => 0,
+    "Test::Most" => 0,
+    "strict" => 0
+  },
+  "VERSION" => "v0.2.4",
+  "test" => {
+    "TESTS" => "t/*.t t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
+  }
+);
+
+
+my %FallbackPrereqs = (
+  "Capture::Tiny" => 0,
+  "Carp" => 0,
+  "DateTime" => 0,
+  "Moose" => 0,
+  "MooseX::HasDefaults::RO" => 0,
+  "MooseX::StrictConstructor" => 0,
+  "Smart::Comments" => 0,
+  "TAP::Harness" => 0,
+  "Test::Moose" => 0,
+  "Test::More" => 0,
+  "Test::Most" => 0,
+  "Type::Library" => 0,
+  "Type::Utils" => 0,
+  "Types::Standard" => 0,
+  "lib" => 0,
+  "strict" => 0,
+  "version" => 0
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  delete $WriteMakefileArgs{TEST_REQUIRES};
+  delete $WriteMakefileArgs{BUILD_REQUIRES};
+  $WriteMakefileArgs{PREREQ_PM} = \%FallbackPrereqs;
+}
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
+
