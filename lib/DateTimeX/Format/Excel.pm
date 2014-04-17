@@ -1,6 +1,6 @@
 package DateTimeX::Format::Excel;
 our	$AUTHORITY = 'cpan:JANDREW';
-use version; our $VERSION = version->declare("v0.2.2");
+use version; our $VERSION = version->declare("v0.2.4");
 
 use	Moose;
 use	MooseX::StrictConstructor;
@@ -230,7 +230,7 @@ Especially in the Windows range of 0-60.  This module attempts to more
 faithfully follow actual Microsoft Excel with a few notable exceptions.
 
 Excel has a few date quirks. First, it allows two different epochs.  One 
-for the windows world and one for the Apple world.  The windows epoch 
+for the Windows world and one for the Apple world.  The windows epoch 
 starts in 0-January-1900 and allows for 29-February-1900 (both non real 
 dates).  Most of the explanations for the difference between windows 
 implementations and Apple implementations focus on the fact that there 
@@ -239,51 +239,53 @@ was no leap year in 1900 L<(the Gregorian vs Julian calendars)
 version wanted to skip that issue.  Both non real dates appear to have 
 been a known issue in the original design of Lotus 1-2-3 that was carried 
 over for L<compatibility|http://support.microsoft.com/kb/214326>.  I like 
-to think that the original Lotus spreadsheet designer got too full of 
-himself and thought that non-programmers wouldn't want to count from 
-0 so January first was represented as 1.  In any case by the time 
-the apple version rolled out more code centric heads were in charge and 
-the apple version starts 1-January-1904. (counting from 0 while avoiding 
-the leap year issue).  In both cases the Windows and Apple version use 
-integers from the epoch start to represent days and the decimal portion to 
-represent a portion of a day.  Both Windows and Apple Excel will attempt 
-to convert recognized date strings to an Excel epoch for storage with the 
-exception that any date prior to the epoch start will be stored as a 
-string.  (31-December-1899 and earlier for Windows and 31-December-1903 
-and earlier for Apple).  Next, Excel does not allow for a time zone 
-component of each number. Finally, in the Windows version when dealing with 
-epochs that do not have a date component just a time component all values 
-will fall between 0 and 1 which is a non real date (0-January-1900).
+to think that the original Lotus spreadsheet designer thought that 
+non-programmers wouldn't want to count from 0 so January first was 
+represented as 1.  This is never explicitly stated in any documentation I 
+could find.  In any case by the time the apple version rolled out 
+more code centric heads were in charge and the apple version starts 
+1-January-1904. (counting from 0 while avoiding the leap year issue).  
+In both cases the Windows and Apple version use integers from the epoch 
+start to represent days and the decimal portion to represent a portion of 
+a day.  Both Windows and Apple Excel will attempt to convert recognized date 
+strings to an Excel epoch for storage with the exception that any date prior 
+to the epoch start will be stored as a string.  (31-December-1899 and earlier 
+for Windows and 31-December-1903 and earlier for Apple).  Next, Excel does 
+not allow for a time zone component of each number. Finally, in the Windows 
+version when dealing with epochs that do not have a date component just a 
+time component all values will fall between 0 and 1 which is a non real date 
+(0-January-1900).
 
-=head2 caveat utilitor
+=head2 Caveat utilitor
 
-This module makes the assumption that you already know if your date is a 
-string or a number in excel and that you will handle string to DateTime 
-conversions elsewhere. see L<DateTime::Format::Flexible>.  
-Any passed strings will die.  (As a failure of a L<Type::Tiny> test)  This 
-module makes several unilateral decisions to deal with corner cases.  
-When a 0 date is requested to be converted to DateTime it will use L<Carp> 
-to cluck that it received a bad date and then provide a DateTime object dated 
-1-January-1900 (Excel would provide 0-January-1900).  If a value between 
-0 and 1 is requested to be converted to a DateTime object the module will 
-B<NOT> cluck and provide an object dated 1-January-1900 with the appropriate 
-time component. All Apple times are provide as 1-January-1904.  Any 
-requested numerical conversion for Windows >= 60 and < 61 will cluck and 
-provide a DateTime object dated 1-March-1900 (Excel would provide 
-29-Febrary-1900).  All requests for conversion of negative numbers to 
+This explanation is not intended to justify Microsofts decisions with excel 
+dates just replicate them as faithfully as possible.  This module makes the 
+assumption that you already know if your date is a string or a number in excel 
+and that you will handle string to DateTime conversions elsewhere. see 
+L<DateTime::Format::Flexible>.  Any passed strings will die.  (As a failure 
+of a L<Type::Tiny> test)  This module also makes several unilateral decisions 
+to deal with corner cases.  When a 0 date is requested to be converted to 
+DateTime it will use L<Carp> to cluck that it received a bad date and then 
+provide a DateTime object dated 1-January-1900 (Excel would provide 
+0-January-1900).  If a value between 0 and 1 is requested to be converted to 
+a DateTime object the module will B<NOT> cluck and provide an object dated 
+1-January-1900 with the appropriate time component. All Apple times are provide 
+as 1-January-1904.  Any requested numerical conversion for Windows >= 60 and 
+< 61 will cluck and provide a DateTime object dated 1-March-1900 (Excel would 
+provide 29-Febrary-1900).  All requests for conversion of negative numbers to 
 DateTime objects will die .  If a DateTime object is provided for conversion 
 to the Excel value and it falls earlier than 1-January-1900 for Windows and 
 1-January-1904 for Apple then the DateTime object itself will be returned.  
 If you accept the output of that L<method|/format_datetime( $date_time )> 
 as a scalar DateTime will stringify itself and give you a text equivalent 
 date.  For time zones you can L<pass|/parse_datetime( @arg_list )> a time zone 
-with the excel number for conversion to the DateTime object.  In reverse 
+with the excel number for conversion to the DateTime object.  In reverse, 
 the conversion to Excel Epoch uses the L<-E<gt>jd
 |https://metacpan.org/pod/DateTime#dt-jd-dt-mjd> method for calculation so 
 the time zone is stripped out.  No clone or duration calculations are provided 
 with this module.  Finally this is a L<Moose> based module and does 
 not provide a functional interface. I<(Moose would allow it I just chose not 
-to for design purposes)>.  
+to for design purposes)>.
 
 =head2 Attributes
 

@@ -1,6 +1,6 @@
 package DateTimeX::Format::Excel::Types;
 our	$AUTHORITY = 'cpan:JANDREW';
-use version; our $VERSION = version->declare("v0.2.2");
+use version; our $VERSION = version->declare("v0.2.4");
 
 use Type::Utils -all;
 use Type::Library
