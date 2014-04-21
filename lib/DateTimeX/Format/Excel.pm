@@ -1,7 +1,9 @@
 package DateTimeX::Format::Excel;
 our	$AUTHORITY = 'cpan:JANDREW';
-use version; our $VERSION = version->declare("v0.2.4");
-
+use	version; our $VERSION = version->declare("v0.4.2");
+use	5.010;
+use	strict;
+use	warnings;
 use	Moose;
 use	MooseX::StrictConstructor;
 use	MooseX::HasDefaults::RO;
@@ -418,6 +420,8 @@ This software is copyrighted (c) 2014 by Jed Lund
 =over
 
 L<version>
+
+L<5.010>
 
 L<Moose>
 

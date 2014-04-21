@@ -1,13 +1,18 @@
 package DateTimeX::Format::Excel::Types;
 our	$AUTHORITY = 'cpan:JANDREW';
-use version; our $VERSION = version->declare("v0.2.4");
-
+use version; our $VERSION = version->declare("v0.4.2");
+use	5.010;
+use strict;
+use warnings;
 use Type::Utils -all;
 use Type::Library
 	-base,
 	-declare => qw(
 		DateTimeHash
 		DateTimeInstance
+		HashToDateTime
+		ExcelEpoch
+		SystemName
 	);
 use Types::Standard -types;
 use DateTime;
