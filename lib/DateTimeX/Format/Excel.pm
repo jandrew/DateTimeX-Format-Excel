@@ -1,6 +1,6 @@
 package DateTimeX::Format::Excel;
 our	$AUTHORITY = 'cpan:JANDREW';
-use	version; our $VERSION = version->declare("v0.4.2");
+use	version; our $VERSION = version->declare("v0.6.2");
 use	5.010;
 use	strict;
 use	warnings;
@@ -279,7 +279,7 @@ DateTime objects will die .  If a DateTime object is provided for conversion
 to the Excel value and it falls earlier than 1-January-1900 for Windows and 
 1-January-1904 for Apple then the DateTime object itself will be returned.  
 If you accept the output of that L<method|/format_datetime( $date_time )> 
-as a scalar DateTime will stringify itself and give you a text equivalent 
+as a scalar, DateTime will stringify itself and give you a text equivalent 
 date.  For time zones you can L<pass|/parse_datetime( @arg_list )> a time zone 
 with the excel number for conversion to the DateTime object.  In reverse, 
 the conversion to Excel Epoch uses the L<-E<gt>jd
@@ -352,7 +352,7 @@ B<1. > 'time_zone' (the only useful option - other values here will ignore posit
 
 B<2. > A recognizable time zone string or L<DateTime::TimeZone> object
 
-B<example: > ( 12345, timezone => 'America/Los_Angeles' )
+B<example: > ( 12345, time_zone => 'America/Los_Angeles' )
 
 =back
 
@@ -419,9 +419,9 @@ This software is copyrighted (c) 2014 by Jed Lund
 
 =over
 
-L<version>
+B<5.010> - (L<perl>)
 
-L<5.010>
+L<version>
 
 L<Moose>
 
