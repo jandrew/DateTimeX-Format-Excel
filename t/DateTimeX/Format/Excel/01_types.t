@@ -28,6 +28,7 @@ my			$question_ref =[
 				DateTime->new( year => 1900 ),
 				59.125,
 				#~ RecursiveType,
+				undef,
 				'apple_excel',
 			];
 my			$bad_value_ref =[
@@ -35,14 +36,15 @@ my			$bad_value_ref =[
 				DateTimeInstance,
 				-1,
 				#~ DateTime->new( year => 1900 ),
+				"",
 				'linux_excel',
 			];
 my			$answer_ref = [
 				qr/\QReference {"day" => 32} did not pass type constraint "DateTimeHash"\E/,
 				qr/\Q) did not pass type constraint "DateTimeInstance"\E/,
 				qr/\Q--1- is less than 0\E/,
+				qr/\Q-- is not a Number\E/,
 				qr/\QValue "linux_excel" did not pass type constraint "SystemName"\E/,
-				qr/\QHello World\E/,
 				qr/\QHello World\E/,
 			];
 ### <where> - harder questions ...
@@ -63,6 +65,10 @@ ok			ExcelEpoch->( $question_ref->[$position] ),
 							"Check that a good value passes ExcelEpoch: $question_ref->[$position]";
 dies_ok{	ExcelEpoch->( $bad_value_ref->[$position] ) }
 							"Check that a bad value fails ExcelEpoch: $bad_value_ref->[$position]";
+like		$@, $answer_ref->[$position++],
+							"... and check for the correct error message";
+dies_ok{	ExcelEpoch->( $bad_value_ref->[$position] ) }#""
+							"Check that a bad value fails ExcelEpoch: $bad_value_ref->[$position]";#
 like		$@, $answer_ref->[$position++],
 							"... and check for the correct error message";
 ok			SystemName->( $question_ref->[$position] ),

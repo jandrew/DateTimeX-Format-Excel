@@ -1,6 +1,6 @@
 package DateTimeX::Format::Excel::Types;
 our	$AUTHORITY = 'cpan:JANDREW';
-use version; our $VERSION = version->declare("v0.6.2");
+use version; our $VERSION = version->declare("v0.9_1");
 use	5.010;
 use strict;
 use warnings;
@@ -14,7 +14,9 @@ use Type::Library
 		ExcelEpoch
 		SystemName
 	);
-use Types::Standard -types;
+use Types::Standard qw(
+		Str Dict Optional InstanceOf Int Num is_Num
+	);
 use DateTime;
 if( $ENV{ Smart_Comments } ){
 	use Smart::Comments -ENV;
@@ -51,9 +53,9 @@ declare ExcelEpoch,
 	as Num,
 	where{ $_ >= 0 },
 	message{
-		( !defined $_ )	? "No value passed" :
-		( $_ < 0 )			? "-$_- is less than 0" :
-							  "-$_- is not a Number"
+		( !defined $_ ) 	? "No value passed" :
+		( !is_Num( $_ ) )	? "-$_- is not a Number" :
+							  "-$_- is less than 0"
 	};
 	
 declare SystemName,

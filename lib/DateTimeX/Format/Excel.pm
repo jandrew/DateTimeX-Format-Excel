@@ -1,6 +1,6 @@
 package DateTimeX::Format::Excel;
 our	$AUTHORITY = 'cpan:JANDREW';
-use	version; our $VERSION = version->declare("v0.6.2");
+use	version; our $VERSION = version->declare("v0.8.2");
 use	5.010;
 use	strict;
 use	warnings;
