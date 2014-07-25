@@ -77,8 +77,10 @@ can_ok		$test_instance, $_,
 			map{
 is			$test_instance->parse_datetime( $question_ref->[$_] ), $answer_ref->[$_],
 										"Check for correct Windows Excel date epoch parsing of: " .
-										$question_ref->[$_] . " (" . $answer_ref->[$_] . ')';;
+										$question_ref->[$_] . " (" . $answer_ref->[$_] . ')';
 			}( 0..4 );
+is			$test_instance->parse_datetime( "" ), "",
+										"Check for correct Windows Excel date epoch parsing of an empty string";
 			map{
 				$capture = capture_stderr{
 is			$test_instance->parse_datetime( $question_ref->[$_] ), $answer_ref->[($_-1)],

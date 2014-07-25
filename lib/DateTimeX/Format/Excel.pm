@@ -1,6 +1,5 @@
 package DateTimeX::Format::Excel;
-our	$AUTHORITY = 'cpan:JANDREW';
-use	version; our $VERSION = version->declare("v0.8.2");
+use	version; our $VERSION = qv("v0.10.2");
 use	5.010;
 use	strict;
 use	warnings;
@@ -15,10 +14,11 @@ if( $ENV{ Smart_Comments } ){
 	### Smart-Comments turned on for DateTimeX-Format-Excel ...
 }
 use	lib	'../../../lib',;
-use DateTimeX::Format::Excel::Types v0.1 qw(
+use DateTimeX::Format::Excel::Types qw(
 	DateTimeHash
 	DateTimeInstance
 	HashToDateTime
+	is_ExcelEpoch
 	ExcelEpoch
 	SystemName
 );
@@ -80,7 +80,10 @@ has system_type =>(
 sub parse_datetime{
     my ( $self, $date_num, $timezone_flag, $timezone ) = @_;
 	### <where> - Reached parse_datetime for: $date_num
-	ExcelEpoch->( $date_num );
+	if( !is_ExcelEpoch( $date_num ) ){
+		### <where> - not and excel epoch: $date_num
+		return $date_num;
+	}
 	### <where> - Passed the type constraint ...
 	if( my $action = $input_scrub->{$self->get_system_type}->{action} ){
 		### <where> - There is an action: $action
@@ -391,7 +394,9 @@ L<github DateTimeX::Format::Excel/issues|https://github.com/jandrew/DateTimeX-Fo
 
 =over
 
-B<1.> Nothing L<yet|/SUPPORT>
+B<1.> Add an error attribute to load soft failures or warnings to
+
+B<2.> Convert Smart::Comments to L<Log::Shiras|https://github.com/jandrew/Log-Shiras> debug lines
 
 =back
 

@@ -12,7 +12,7 @@ use	Test::Most;
 use	Test::Moose;
 use	DateTime;
 use	lib '../../../../lib',;
-use	DateTimeX::Format::Excel::Types v0.1 qw(
+use	DateTimeX::Format::Excel::Types v0.10 qw(
 		DateTimeHash
 		DateTimeInstance
 		HashToDateTime

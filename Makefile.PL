@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Microsofty conversion of Excel epochs ",
+  "ABSTRACT" => "Microsofty conversion of Excel epochs",
   "AUTHOR" => "Jed Lund <jandrew\@cpan.org>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
@@ -41,7 +41,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Test::Most" => 0
   },
-  "VERSION" => "v0.8.2",
+  "VERSION" => "v0.10.2",
   "test" => {
     "TESTS" => "t/*.t t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }
