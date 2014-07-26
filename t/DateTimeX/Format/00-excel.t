@@ -1,6 +1,6 @@
 #########1 Test File for DateTimeX::Format::Excel 5#########6#########7#########8#########9
 #!perl
-use	Test::Most;
+use	Test::Most tests => 156;
 use	Test::Moose;
 use	Capture::Tiny qw( capture_stderr );
 use	DateTime;

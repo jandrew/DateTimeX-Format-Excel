@@ -50,11 +50,11 @@
    "provides" : {
       "DateTimeX::Format::Excel" : {
          "file" : "lib/DateTimeX/Format/Excel.pm",
-         "version" : "v0.12.2"
+         "version" : "v0.12.4"
       },
       "DateTimeX::Format::Excel::Types" : {
          "file" : "lib/DateTimeX/Format/Excel/Types.pm",
-         "version" : "v0.12.2"
+         "version" : "v0.12.4"
       }
    },
    "release_status" : "stable",
@@ -69,7 +69,7 @@
          "web" : "https://github.com/jandrew/DateTimeX-Format-Excel"
       }
    },
-   "version" : "v0.12.2",
+   "version" : "v0.12.4",
    "x_authority" : "cpan:JANDREW"
 }
 

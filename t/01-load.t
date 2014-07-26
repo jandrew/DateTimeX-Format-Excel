@@ -1,6 +1,6 @@
 #!perl
 ### Test that the module(s) load!(s)
-use	Test::More;
+use	Test::More tests => 15;
 use	lib '../lib', 'lib';
 BEGIN{ use_ok( TAP::Harness ) };
 BEGIN{ use_ok( Test::More ) };

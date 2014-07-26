@@ -42,7 +42,7 @@ my %WriteMakefileArgs = (
     "Test::Most" => 0,
     "Type::Tiny::XS" => "0.010"
   },
-  "VERSION" => "v0.12.2",
+  "VERSION" => "v0.12.4",
   "test" => {
     "TESTS" => "t/*.t t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }

@@ -20,10 +20,10 @@ name: DateTimeX-Format-Excel
 provides:
   DateTimeX::Format::Excel:
     file: lib/DateTimeX/Format/Excel.pm
-    version: v0.12.2
+    version: v0.12.4
   DateTimeX::Format::Excel::Types:
     file: lib/DateTimeX/Format/Excel/Types.pm
-    version: v0.12.2
+    version: v0.12.4
 requires:
   Carp: 0
   DateTime: 0
@@ -43,5 +43,5 @@ resources:
   bugtracker: https://github.com/jandrew/DateTimeX-Format-Excel/issues
   homepage: https://github.com/jandrew/DateTimeX-Format-Excel
   repository: https://github.com/jandrew/DateTimeX-Format-Excel.git
-version: v0.12.2
+version: v0.12.4
 x_authority: cpan:JANDREW

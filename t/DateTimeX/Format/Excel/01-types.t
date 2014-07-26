@@ -8,7 +8,7 @@ if( $ENV{ Smart_Comments } ){
 	### Smart-Comments turned on for testing DateTimeX-Format-Excel-Types ...
 }
 $| = 1;
-use	Test::Most;
+use	Test::Most tests => 14;
 use	Test::Moose;
 use	DateTime;
 use Type::Tiny::XS 0.010;
