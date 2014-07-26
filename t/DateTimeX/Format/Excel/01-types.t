@@ -11,6 +11,7 @@ $| = 1;
 use	Test::Most;
 use	Test::Moose;
 use	DateTime;
+use Type::Tiny::XS 0.010;
 use	lib '../../../../lib',;
 use	DateTimeX::Format::Excel::Types v0.10 qw(
 		DateTimeHash
