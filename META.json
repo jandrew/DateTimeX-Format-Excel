@@ -42,19 +42,18 @@
             "Capture::Tiny" : "0",
             "Test::Moose" : "0",
             "Test::More" : "0",
-            "Test::Most" : "0",
-            "Type::Tiny::XS" : "0.010"
+            "Test::Most" : "0"
          }
       }
    },
    "provides" : {
       "DateTimeX::Format::Excel" : {
          "file" : "lib/DateTimeX/Format/Excel.pm",
-         "version" : "v0.12.4"
+         "version" : "v0.12.6"
       },
       "DateTimeX::Format::Excel::Types" : {
          "file" : "lib/DateTimeX/Format/Excel/Types.pm",
-         "version" : "v0.12.4"
+         "version" : "v0.12.6"
       }
    },
    "release_status" : "stable",
@@ -69,7 +68,7 @@
          "web" : "https://github.com/jandrew/DateTimeX-Format-Excel"
       }
    },
-   "version" : "v0.12.4",
+   "version" : "v0.12.6",
    "x_authority" : "cpan:JANDREW"
 }
 

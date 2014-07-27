@@ -12,6 +12,7 @@ BEGIN{ use_ok(	MooseX::StrictConstructor ) };
 BEGIN{ use_ok(	MooseX::HasDefaults::RO ) };
 BEGIN{ use_ok(	DateTime ) };
 BEGIN{ use_ok(	Carp, qw( cluck ) ) };
+BEGIN{ $ENV{PERL_TYPE_TINY_XS} = 0; }
 BEGIN{ use_ok(	Type::Utils ) };
 BEGIN{ use_ok(	Type::Library ) };
 BEGIN{ use_ok(	Types::Standard ) };

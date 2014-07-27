@@ -1,6 +1,7 @@
 #########1 Test File for DateTimeX::Format::Excel::Types    6#########7#########8#########9
 #!perl
 BEGIN{
+	$ENV{PERL_TYPE_TINY_XS} = 0;
 	#~ $ENV{ Smart_Comments } = '###';
 }
 if( $ENV{ Smart_Comments } ){
@@ -11,7 +12,6 @@ $| = 1;
 use	Test::Most tests => 14;
 use	Test::Moose;
 use	DateTime;
-use Type::Tiny::XS 0.010;
 use	lib '../../../../lib',;
 use	DateTimeX::Format::Excel::Types v0.10 qw(
 		DateTimeHash

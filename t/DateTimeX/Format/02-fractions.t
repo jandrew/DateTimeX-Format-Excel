@@ -2,6 +2,9 @@ use strict;
 use Test::More tests => 26;
 use lib '../../../lib',;
 use DateTimeX::Format::Excel;
+BEGIN{
+	$ENV{PERL_TYPE_TINY_XS} = 0;
+}
 
 sub round {
   my $v = shift;

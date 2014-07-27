@@ -1,6 +1,7 @@
 # $Id: basic.t,v 1.1 2003/03/21 05:35:58 koschei Exp $
 # modified by jandrew 2014-4-16
 BEGIN{
+	$ENV{PERL_TYPE_TINY_XS} = 0;
 	#~ $ENV{ Smart_Comments } = '###';
 }
 if( $ENV{Smart_Comments} ){

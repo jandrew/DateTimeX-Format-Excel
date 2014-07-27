@@ -6,6 +6,7 @@ use	Capture::Tiny qw( capture_stderr );
 use	DateTime;
 use	lib	'../../../lib',;
 BEGIN{
+	$ENV{PERL_TYPE_TINY_XS} = 0;
 	#~ $ENV{ Smart_Comments } = '###';
 }
 if( $ENV{Smart_Comments} ){

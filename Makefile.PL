@@ -39,10 +39,9 @@ my %WriteMakefileArgs = (
     "Capture::Tiny" => 0,
     "Test::Moose" => 0,
     "Test::More" => 0,
-    "Test::Most" => 0,
-    "Type::Tiny::XS" => "0.010"
+    "Test::Most" => 0
   },
-  "VERSION" => "v0.12.4",
+  "VERSION" => "v0.12.6",
   "test" => {
     "TESTS" => "t/*.t t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }
@@ -61,7 +60,6 @@ my %FallbackPrereqs = (
   "Test::More" => 0,
   "Test::Most" => 0,
   "Type::Library" => "0.046",
-  "Type::Tiny::XS" => "0.010",
   "Type::Utils" => 0,
   "Types::Standard" => 0,
   "lib" => 0,
