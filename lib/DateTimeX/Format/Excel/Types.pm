@@ -1,5 +1,5 @@
 package DateTimeX::Format::Excel::Types;
-use version; our $VERSION = qv("v0.12.6");
+use version; our $VERSION = qv("v0.12.8");
 use	5.010;
 use strict;
 use warnings;
@@ -16,7 +16,11 @@ use Type::Library 0.046
 use Types::Standard qw(
 		Str Dict Optional InstanceOf Int Num is_Num
 	);
-if( exists $INC{'Type/Tiny/XS.pm'} ){
+my $try_xs =
+		exists($ENV{PERL_TYPE_TINY_XS}) ? !!$ENV{PERL_TYPE_TINY_XS} :
+		exists($ENV{PERL_ONLY})         ?  !$ENV{PERL_ONLY} :
+		1;
+if( $try_xs and exists $INC{'Type/Tiny/XS.pm'} ){
 	eval "use Type::Tiny::XS 0.010";
 	if( $@ ){
 		die "You have loaded Type::Tiny::XS but versions prior to 0.010 will cause this module to fail";

@@ -15,8 +15,6 @@ if( $ENV{Smart_Comments} ){
 }
 $| = 1;
 use	DateTimeX::Format::Excel;
-my	$test_file = ( @ARGV ) ? $ARGV[0] : '../../../../test_files/';
-	$test_file .= 'sharedStrings.xml';
 my  ( 
 			$test_instance, $capture, $x, @answer,
 	);

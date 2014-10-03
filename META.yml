@@ -19,14 +19,14 @@ name: DateTimeX-Format-Excel
 provides:
   DateTimeX::Format::Excel:
     file: lib/DateTimeX/Format/Excel.pm
-    version: v0.12.6
+    version: v0.12.8
   DateTimeX::Format::Excel::Types:
     file: lib/DateTimeX/Format/Excel/Types.pm
-    version: v0.12.6
+    version: v0.12.8
 requires:
   Carp: 0
   DateTime: 0
-  Moose: 0
+  Moose: 2.1213
   MooseX::HasDefaults::RO: 0
   MooseX::StrictConstructor: 0
   Smart::Comments: 0
@@ -42,5 +42,5 @@ resources:
   bugtracker: https://github.com/jandrew/DateTimeX-Format-Excel/issues
   homepage: https://github.com/jandrew/DateTimeX-Format-Excel
   repository: https://github.com/jandrew/DateTimeX-Format-Excel.git
-version: v0.12.6
+version: v0.12.8
 x_authority: cpan:JANDREW

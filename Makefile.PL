@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Carp" => 0,
     "DateTime" => 0,
-    "Moose" => 0,
+    "Moose" => "2.1213",
     "MooseX::HasDefaults::RO" => 0,
     "MooseX::StrictConstructor" => 0,
     "Smart::Comments" => 0,
@@ -41,7 +41,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Test::Most" => 0
   },
-  "VERSION" => "v0.12.6",
+  "VERSION" => "v0.12.8",
   "test" => {
     "TESTS" => "t/*.t t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }
@@ -52,7 +52,7 @@ my %FallbackPrereqs = (
   "Capture::Tiny" => 0,
   "Carp" => 0,
   "DateTime" => 0,
-  "Moose" => 0,
+  "Moose" => "2.1213",
   "MooseX::HasDefaults::RO" => 0,
   "MooseX::StrictConstructor" => 0,
   "Smart::Comments" => 0,

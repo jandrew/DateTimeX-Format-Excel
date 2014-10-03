@@ -1,9 +1,9 @@
 package DateTimeX::Format::Excel;
-use	version; our $VERSION = qv("v0.12.6");
+use	version; our $VERSION = qv("v0.12.8");
 use	5.010;
 use	strict;
 use	warnings;
-use	Moose;
+use	Moose 2.1213;
 use	MooseX::StrictConstructor;
 use	MooseX::HasDefaults::RO;
 use	DateTime;
