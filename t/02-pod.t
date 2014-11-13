@@ -1,7 +1,6 @@
 #!perl
 ### Test that the pod files run
-use Test::More;
-#~ use Test::More skip_all => 'Developer only test';
+use Test::More 1.0;
 eval "use Test::Pod 1.48";
 if( $@ ){
 	plan skip_all => "Test::Pod 1.48 required for testing POD";

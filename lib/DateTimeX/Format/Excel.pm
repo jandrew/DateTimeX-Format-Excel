@@ -1,8 +1,9 @@
 package DateTimeX::Format::Excel;
-use	version; our $VERSION = qv("v0.12.8");
+use	version; our $VERSION = qv("v0.12.10");
 use	5.010;
 use	strict;
 use	warnings;
+use List::Util 1.33;
 use	Moose 2.1213;
 use	MooseX::StrictConstructor;
 use	MooseX::HasDefaults::RO;
@@ -386,6 +387,38 @@ Dave Rolsky (L<DROLSKY>) for kickstarting the DateTime project.
 Iain Truskett, Dave Rolsky, and Achim Bursian for maintaining L<DateTime::Format::Excel>.
 	I used it heavily till I wrote this.
 Peter (Stig) Edwards and Bobby Metz for contributing to L<DateTime::Format::Excel>.
+
+=head1 Build/Install from Source
+	
+B<1.> Download a compressed file with the code
+	
+B<2.> Extract the code from the compressed file.  If you are using tar this should work:
+
+        tar -zxvf DateTimeX-Format-Excel-v1.xx.tar.gz
+
+B<3.> Change (cd) into the extracted directory
+
+B<4.> Run the following commands
+
+=over
+
+(For Windows find what version of make was used to compile your perl)
+
+	perl  -V:make
+
+(then for Windows substitute the correct make function (s/make/dmake/g)?)
+	
+=back
+
+	>perl Makefile.PL
+
+	>make
+
+	>make test
+
+	>make install # As sudo/root
+
+	>make clean
 
 =head1 SUPPORT
 

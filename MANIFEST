@@ -9,7 +9,6 @@ README.pod
 dist.ini
 lib/DateTimeX/Format/Excel.pm
 lib/DateTimeX/Format/Excel/Types.pm
-t/01-load.t
 t/DateTimeX/Format/00-excel.t
 t/DateTimeX/Format/01-basic.t
 t/DateTimeX/Format/02-fractions.t

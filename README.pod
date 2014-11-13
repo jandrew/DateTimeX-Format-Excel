@@ -1,6 +1,8 @@
-=head1 DateTimeX::Format::Excel
+=pod
 
-Microsofty conversion of Excel epochs
+=head1 NAME
+
+DateTimeX::Format::Excel - Microsofty conversion of Excel epochs
 
 =head1 SYNOPSIS
 	
@@ -108,6 +110,11 @@ with this module.  Finally this is a L<Moose> based module and does
 not provide a functional interface. I<(Moose would allow it I just chose not 
 to for design purposes)>.
 
+The Types module for this package uses L<Type::Tiny> which can, in the background, 
+use L<Type::Tiny::XS>.  While in general this is a good thing you will need to make 
+sure that Type::Tiny::XS is version 0.010 or newer since the older ones didn't support 
+the 'Optional' method.
+
 =head2 Attributes
 
 Data passed to new when creating an instance (parser).  For modification of 
@@ -198,6 +205,38 @@ Iain Truskett, Dave Rolsky, and Achim Bursian for maintaining L<DateTime::Format
 	I used it heavily till I wrote this.
 Peter (Stig) Edwards and Bobby Metz for contributing to L<DateTime::Format::Excel>.
 
+=head1 Build/Install from Source
+	
+B<1.> Download a compressed file with the code
+	
+B<2.> Extract the code from the compressed file.  If you are using tar this should work:
+
+        tar -zxvf DateTimeX-Format-Excel-v1.xx.tar.gz
+
+B<3.> Change (cd) into the extracted directory
+
+B<4.> Run the following commands
+
+=over
+
+(For Windows find what version of make was used to compile your perl)
+
+	perl  -V:make
+
+(then for Windows substitute the correct make function (s/make/dmake/g)?)
+	
+=back
+
+	>perl Makefile.PL
+
+	>make
+
+	>make test
+
+	>make install # As sudo/root
+
+	>make clean
+
 =head1 SUPPORT
 
 =over
@@ -210,7 +249,9 @@ L<github DateTimeX::Format::Excel/issues|https://github.com/jandrew/DateTimeX-Fo
 
 =over
 
-B<1.> Nothing L<yet|/SUPPORT>
+B<1.> Add an error attribute to load soft failures or warnings to
+
+B<2.> Convert Smart::Comments to L<Log::Shiras|https://github.com/jandrew/Log-Shiras> debug lines
 
 =back
 
@@ -238,9 +279,9 @@ This software is copyrighted (c) 2014 by Jed Lund
 
 =over
 
-L<version>
+B<5.010> - (L<perl>)
 
-L<5.010> (perl)
+L<version>
 
 L<Moose>
 
@@ -268,33 +309,4 @@ L<Smart::Comments> - Turned on with $ENV{ Smart_Comments }
 
 =back
 
-=head1 Build from Source - (for example git)
-
-=over
-	
-B<1.> Download a compressed file with the code
-	
-B<2.> Extract the code from the compressed file
-
-B<3.> Change (cd) into the extracted directory
-
-=back
-
-(For Windows find what version of make was used to compile your perl)
-
-	perl  -V:make
-
-Then
-
-	>perl Makefile.PL
-
-	>make
-
-	>make test
-
-	>make install
-
-	>make clean
-	(use the windows make version as appropriate (dmake?))
-	
 =cut
