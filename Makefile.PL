@@ -38,11 +38,12 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Capture::Tiny" => 0,
+    "List::Util" => "1.33",
     "Test::Moose" => 0,
     "Test::More" => 0,
     "Test::Most" => 0
   },
-  "VERSION" => "v0.12.10",
+  "VERSION" => "v0.12.12",
   "test" => {
     "TESTS" => "t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }

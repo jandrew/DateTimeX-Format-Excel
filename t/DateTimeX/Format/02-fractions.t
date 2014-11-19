@@ -1,4 +1,6 @@
 use strict;
+use warnings;
+use List::Util 1.33;
 use Test::More tests => 26;
 use lib '../../../lib',;
 use DateTimeX::Format::Excel;
