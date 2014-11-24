@@ -1,5 +1,5 @@
 package DateTimeX::Format::Excel;
-use version 0.9909; our $VERSION = version->declare("v0.12.14");
+use version; our $VERSION = version->declare("v0.12.16");
 use	5.010;
 use	strict;
 use	warnings;
@@ -15,7 +15,7 @@ if( $ENV{ Smart_Comments } ){
 	### Smart-Comments turned on for DateTimeX-Format-Excel ...
 }
 use	lib	'../../../lib',;
-use DateTimeX::Format::Excel::Types v0.12 qw(
+use DateTimeX::Format::Excel::Types 0.012 qw(
 	DateTimeHash
 	DateTimeInstance
 	HashToDateTime
@@ -464,7 +464,7 @@ This software is copyrighted (c) 2014 by Jed Lund
 
 B<5.010> - (L<perl>)
 
-L<version>
+L<version> - 0.9909
 
 L<Moose>
 

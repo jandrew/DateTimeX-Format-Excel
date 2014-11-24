@@ -281,7 +281,7 @@ This software is copyrighted (c) 2014 by Jed Lund
 
 B<5.010> - (L<perl>)
 
-L<version>
+L<version> - 0.9909
 
 L<Moose>
 

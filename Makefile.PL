@@ -44,7 +44,7 @@ my %WriteMakefileArgs = (
     "Test::Most" => 0,
     "version" => "0.9909"
   },
-  "VERSION" => "v0.12.14",
+  "VERSION" => "v0.12.16",
   "test" => {
     "TESTS" => "t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }
