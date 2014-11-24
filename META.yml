@@ -8,6 +8,7 @@ build_requires:
   Test::Moose: 0
   Test::More: 0
   Test::Most: 0
+  version: 0.9909
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
@@ -20,10 +21,10 @@ name: DateTimeX-Format-Excel
 provides:
   DateTimeX::Format::Excel:
     file: lib/DateTimeX/Format/Excel.pm
-    version: v0.12.12
+    version: v0.12.14
   DateTimeX::Format::Excel::Types:
     file: lib/DateTimeX/Format/Excel/Types.pm
-    version: v0.12.12
+    version: v0.12.14
 requires:
   Carp: 0
   DateTime: 0
@@ -38,11 +39,11 @@ requires:
   lib: 0
   perl: 5.010
   strict: 0
-  version: 0
+  version: 0.9909
   warnings: 0
 resources:
   bugtracker: https://github.com/jandrew/DateTimeX-Format-Excel/issues
   homepage: https://github.com/jandrew/DateTimeX-Format-Excel
   repository: https://github.com/jandrew/DateTimeX-Format-Excel.git
-version: v0.12.12
+version: v0.12.14
 x_authority: cpan:JANDREW

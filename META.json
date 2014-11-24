@@ -34,7 +34,7 @@
             "lib" : "0",
             "perl" : "5.010",
             "strict" : "0",
-            "version" : "0",
+            "version" : "0.9909",
             "warnings" : "0"
          }
       },
@@ -44,18 +44,19 @@
             "List::Util" : "1.33",
             "Test::Moose" : "0",
             "Test::More" : "0",
-            "Test::Most" : "0"
+            "Test::Most" : "0",
+            "version" : "0.9909"
          }
       }
    },
    "provides" : {
       "DateTimeX::Format::Excel" : {
          "file" : "lib/DateTimeX/Format/Excel.pm",
-         "version" : "v0.12.12"
+         "version" : "v0.12.14"
       },
       "DateTimeX::Format::Excel::Types" : {
          "file" : "lib/DateTimeX/Format/Excel/Types.pm",
-         "version" : "v0.12.12"
+         "version" : "v0.12.14"
       }
    },
    "release_status" : "stable",
@@ -70,7 +71,7 @@
          "web" : "https://github.com/jandrew/DateTimeX-Format-Excel"
       }
    },
-   "version" : "v0.12.12",
+   "version" : "v0.12.14",
    "x_authority" : "cpan:JANDREW"
 }
 

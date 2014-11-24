@@ -33,7 +33,7 @@ my %WriteMakefileArgs = (
     "Types::Standard" => 0,
     "lib" => 0,
     "strict" => 0,
-    "version" => 0,
+    "version" => "0.9909",
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
@@ -41,9 +41,10 @@ my %WriteMakefileArgs = (
     "List::Util" => "1.33",
     "Test::Moose" => 0,
     "Test::More" => 0,
-    "Test::Most" => 0
+    "Test::Most" => 0,
+    "version" => "0.9909"
   },
-  "VERSION" => "v0.12.12",
+  "VERSION" => "v0.12.14",
   "test" => {
     "TESTS" => "t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }
@@ -67,7 +68,7 @@ my %FallbackPrereqs = (
   "Types::Standard" => 0,
   "lib" => 0,
   "strict" => 0,
-  "version" => 0,
+  "version" => "0.9909",
   "warnings" => 0
 );
 
