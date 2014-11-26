@@ -38,13 +38,23 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Capture::Tiny" => 0,
+    "Carp" => 0,
+    "DateTime" => 0,
     "List::Util" => "1.33",
+    "Moose" => "2.1213",
+    "MooseX::HasDefaults::RO" => 0,
+    "MooseX::StrictConstructor" => 0,
+    "Smart::Comments" => 0,
     "Test::Moose" => 0,
     "Test::More" => 0,
     "Test::Most" => 0,
+    "Type::Library" => "0.046",
+    "Type::Utils" => 0,
+    "Types::Standard" => 0,
+    "lib" => 0,
     "version" => "0.9909"
   },
-  "VERSION" => "v0.12.16",
+  "VERSION" => "v0.12.18",
   "test" => {
     "TESTS" => "t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }
