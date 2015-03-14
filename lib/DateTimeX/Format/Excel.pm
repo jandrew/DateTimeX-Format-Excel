@@ -1,5 +1,5 @@
 package DateTimeX::Format::Excel;
-use version; our $VERSION = version->declare("v0.12.18");
+use version; our $VERSION = qv("v0.12.20");
 use	5.010;
 use	strict;
 use	warnings;
@@ -243,24 +243,24 @@ implementations and Apple implementations focus on the fact that there
 was no leap year in 1900 L<(the Gregorian vs Julian calendars)
 |http://en.wikipedia.org/wiki/Gregorian_calendar> and the Apple 
 version wanted to skip that issue.  Both non real dates appear to have 
-been a known issue in the original design of Lotus 1-2-3 that was carried 
-over for L<compatibility|http://support.microsoft.com/kb/214326>.  I like 
-to think that the original Lotus spreadsheet designer thought that 
-non-programmers wouldn't want to count from 0 so January first was 
-represented as 1.  This is never explicitly stated in any documentation I 
-could find.  In any case by the time the apple version rolled out 
-more code centric heads were in charge and the apple version starts 
-1-January-1904. (counting from 0 while avoiding the leap year issue).  
-In both cases the Windows and Apple version use integers from the epoch 
-start to represent days and the decimal portion to represent a portion of 
-a day.  Both Windows and Apple Excel will attempt to convert recognized date 
-strings to an Excel epoch for storage with the exception that any date prior 
-to the epoch start will be stored as a string.  (31-December-1899 and earlier 
-for Windows and 31-December-1903 and earlier for Apple).  Next, Excel does 
-not allow for a time zone component of each number. Finally, in the Windows 
-version when dealing with epochs that do not have a date component just a 
-time component all values will fall between 0 and 1 which is a non real date 
-(0-January-1900).
+been a known issue in the original design of VisiCalc that was carried 
+through Lotus 1-2-3 and into Excel for L<compatibility
+|http://support.microsoft.com/kb/214326>.  (Spreadsheets were arguably the 
+first personal computer killer app and Excel was a L<johnny come lately
+|http://en.wikipedia.org/wiki/Lotus_1-2-3#VisiCalc> trying to gain an entry 
+into the market at the time.)  The closest microsoft discussion I could find 
+on this issue is L<here|http://www.joelonsoftware.com/items/2006/06/16.html>.  
+In any case the apple version starts 1-January-1904. (counting from 0 while 
+also avoiding the leap year issue).  In both cases the Windows and Apple 
+version use integers from the epoch start to represent days and the decimal 
+portion to represent a portion of a day.  Both Windows and Apple Excel will 
+attempt to convert recognized date strings to an Excel epoch for storage with 
+the exception that any date prior to the epoch start will be stored as a 
+string.  (31-December-1899 and earlier for Windows and 31-December-1903 and 
+earlier for Apple).  Next, Excel does not allow for a time zone component of 
+each number. Finally, in the Windows version when dealing with epochs that 
+do not have a date component just a time component all values will fall 
+between 0 and 1 which is a non real date (0-January-1900).
 
 =head2 Caveat utilitor
 
@@ -380,6 +380,54 @@ B<Accepts:> A L<DateTime> object
 B<Returns:> An excel epoch number or DateTime object if it is before the relevant epoch start.
 
 =back
+
+=head A note on text dates
+
+Dates saved in Excel prior to 1-January-1900 for windows or 1-January-1904 are stored as text. 
+I suggest using L<Type::Tiny::Manual::Coercions/Chained Coercions>.  Or use and Excel reader 
+that implements this for you like L<Spreadsheet::XLSX::Reader::LibXML> (self promotion).  
+Here is one possible way to integrate text and dates in the same field into a consistent DateTime 
+output. (I know it's a bit clunky but it's just a place to start)
+
+	my $system_lookup = {
+			'1900' => 'win_excel',
+			'1904' => 'apple_excel',
+		};
+	my	@args_list	= ( system_type => $system_lookup->{$workbook->get_epoch_year} );
+	my	$converter	= DateTimeX::Format::Excel->new( @args_list );
+	my	$string_via	= sub{ 
+							my	$str = $_[0];
+							return DateTime::Format::Flexible->parse_datetime( $str );
+						};
+	my	$num_via	= sub{
+							my	$num = $_[0];
+							return $converter->parse_datetime( $num );
+						};
+	my	$date_time_from_value = Type::Coercion->new(
+			type_coercion_map => [ Num, $num_via, Str, $string_via, ],
+		);
+	my	$date_time_type = Type::Tiny->new(
+			name		=> 'Custom_date_type',
+			constraint	=> sub{ ref($_) eq 'DateTime' },
+			coercion	=> $date_time_from_value,
+		);
+	my	$string_type = Type::Tiny->new(
+			name		=> 'YYYYMMDD',
+			constraint	=> sub{
+				!$_ or (
+				$_ =~ /^\d{4}\-(\d{2})-(\d{2})$/ and
+				$1 > 0 and $1 < 13 and $2 > 0 and $2 < 32 )
+			},
+			coercion	=> Type::Coercion->new(
+				type_coercion_map =>[
+					$date_time_type->coercibles, sub{
+						my $tmp = $date_time_type->coerce( $_ );
+						$tmp->format_cldr( 'yyyy-MM-dd' ) 
+					},
+				],
+			),
+	);
+
 
 =head1 THANKS
 
