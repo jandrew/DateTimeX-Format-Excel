@@ -54,7 +54,7 @@ my %WriteMakefileArgs = (
     "lib" => 0,
     "version" => "0.9909"
   },
-  "VERSION" => "v0.12.20",
+  "VERSION" => "v0.12.22",
   "test" => {
     "TESTS" => "t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }

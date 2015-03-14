@@ -198,13 +198,13 @@ B<Returns:> An excel epoch number or DateTime object if it is before the relevan
 
 =back
 
-=head A note on text dates
+=head2 A note on text dates
 
-Dates saved in Excel prior to 1-January-1900 for windows or 1-January-1904 are stored as text. 
-I suggest using L<Type::Tiny::Manual::Coercions/Chained Coercions>.  Or use and Excel reader 
+Dates saved in Excel prior to 1-January-1900 for Windows or 1-January-1904 for Apple are stored as text. 
+I suggest using L<Type::Tiny::Manual::Coercions/Chained Coercions>.  Or use an Excel reader 
 that implements this for you like L<Spreadsheet::XLSX::Reader::LibXML> (self promotion).  
 Here is one possible way to integrate text and dates in the same field into a consistent DateTime 
-output. (I know it's a bit clunky but it's just a place to start)
+output. (I know it's a bit clunky but it's a place to start)
 
 	my $system_lookup = {
 			'1900' => 'win_excel',
@@ -321,7 +321,7 @@ it and/or modify it under the same terms as Perl itself.
 The full text of the license can be found in the
 LICENSE file included with this module.
 
-This software is copyrighted (c) 2014 by Jed Lund
+This software is copyrighted (c) 2014,2015 by Jed Lund
 
 =head1 DEPENDENCIES
 
@@ -329,7 +329,7 @@ This software is copyrighted (c) 2014 by Jed Lund
 
 B<5.010> - (L<perl>)
 
-L<version> - 0.9909
+L<version> - 0.77
 
 L<Moose>
 
