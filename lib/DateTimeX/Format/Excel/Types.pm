@@ -1,10 +1,10 @@
 package DateTimeX::Format::Excel::Types;
-use version; our $VERSION = version->declare("v0.12.24");
+use version; our $VERSION = version->declare("v0.12.26");
 use	5.010;
 use strict;
 use warnings;
 use Type::Utils -all;
-use Type::Library 0.046
+use Type::Library 1.000
 	-base,
 	-declare => qw(
 		DateTimeHash

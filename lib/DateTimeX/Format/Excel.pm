@@ -1,5 +1,5 @@
 package DateTimeX::Format::Excel;
-use version 0.77; our $VERSION = qv("v0.12.24");
+use version 0.77; our $VERSION = qv("v0.12.26");
 use	5.010;
 use	strict;
 use	warnings;
@@ -189,11 +189,13 @@ DateTimeX::Format::Excel - Microsofty conversion of Excel epochs
 
 =begin html
 
-<a href="https://travis-ci.org/jandrew/DateTimeX-Format-Excel"><img alt="Build Status" src="https://travis-ci.org/jandrew/DateTimeX-Format-Excel.png?branch=master" /></a>
+<a href="https://travis-ci.org/jandrew/DateTimeX-Format-Excel"><img alt="Build Status" src="https://travis-ci.org/jandrew/DateTimeX-Format-Excel.png?branch=master" alt='Travis Build'/></a>
 
 <a href='https://coveralls.io/r/jandrew/DateTimeX-Format-Excel?branch=master'><img src='https://coveralls.io/repos/jandrew/DateTimeX-Format-Excel/badge.svg?branch=master' alt='Coverage Status' /></a>
 
-<a href="http://badge.fury.io/pl/DateTimeX-Format-Excel"><img src="https://badge.fury.io/pl/DateTimeX-Format-Excel.svg" alt="CPAN version"></a>
+<a href='http://cpants.cpanauthors.org/dist/DateTimeX-Format-Excel'><img src='http://cpants.cpanauthors.org/dist/DateTimeX-Format-Excel.png' alt='Kwalitee' /></a>
+
+<a href="https://img.shields.io/badge"><img src="https://img.shields.io/badge/perl-5.10+-brightgreen.svg" alt="perl version"></a>
 
 =end html
 
