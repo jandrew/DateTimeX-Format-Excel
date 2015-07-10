@@ -1,0 +1,6 @@
+#gitignore file
+.build/*
+DateTimeX-Format-Excel*
+*.tar.gz
+DevelopmentNotes.txt
+Makefile.old
