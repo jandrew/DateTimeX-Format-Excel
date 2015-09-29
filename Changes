@@ -8,6 +8,11 @@ Uses the change tracking convention
 
 {{$NEXT}}
 
+	* Another cool change
+
+v0.12.28  2015-09-29 09:25:26-07:00 America/Los_Angeles
+
+	! Added the configuration requirement for Moose 2.1213 before test since I got a weird fail for older moose when it was listed as installed
 	+ Additional badge changes
 	+ Changed the height of the kwalitee badge to better match the other badges
 	+ Changed the link in the perl 5.10+ badge to link to www.perl.org

@@ -3,30 +3,31 @@ abstract: 'Microsofty conversion of Excel epochs'
 author:
   - 'Jed Lund <jandrew@cpan.org>'
 build_requires:
-  Capture::Tiny: 0
-  Carp: 0
-  DateTime: 0
-  List::Util: 1.33
-  Moose: 2.1213
-  MooseX::HasDefaults::RO: 0
-  MooseX::StrictConstructor: 0
-  Smart::Comments: 0
-  Test::Moose: 0
-  Test::More: 0
-  Test::Most: 0
-  Type::Library: 1.000
-  Type::Utils: 0
-  Types::Standard: 0
-  lib: 0
-  version: 0.77
+  Capture::Tiny: '0'
+  Carp: '0'
+  DateTime: '0'
+  List::Util: '1.33'
+  Moose: '2.1213'
+  MooseX::HasDefaults::RO: '0'
+  MooseX::StrictConstructor: '0'
+  Smart::Comments: '0'
+  Test::Moose: '0'
+  Test::More: '0'
+  Test::Most: '0'
+  Type::Library: '1.000'
+  Type::Utils: '0'
+  Types::Standard: '0'
+  lib: '0'
+  version: '0.77'
 configure_requires:
-  ExtUtils::MakeMaker: 0
+  ExtUtils::MakeMaker: '7.04'
+  Moose: '2.1213'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.035, CPAN::Meta::Converter version 2.143240'
+generated_by: 'Dist::Zilla version 5.037, CPAN::Meta::Converter version 2.150001'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: DateTimeX-Format-Excel
 provides:
   DateTimeX::Format::Excel:
@@ -36,21 +37,21 @@ provides:
     file: lib/DateTimeX/Format/Excel/Types.pm
     version: v0.12.28
 requires:
-  Carp: 0
-  DateTime: 0
-  List::Util: 1.33
-  Moose: 2.1213
-  MooseX::HasDefaults::RO: 0
-  MooseX::StrictConstructor: 0
-  Smart::Comments: 0
-  Type::Library: 1.000
-  Type::Utils: 0
-  Types::Standard: 0
-  lib: 0
-  perl: 5.010
-  strict: 0
-  version: 0.77
-  warnings: 0
+  Carp: '0'
+  DateTime: '0'
+  List::Util: '1.33'
+  Moose: '2.1213'
+  MooseX::HasDefaults::RO: '0'
+  MooseX::StrictConstructor: '0'
+  Smart::Comments: '0'
+  Type::Library: '1.000'
+  Type::Utils: '0'
+  Types::Standard: '0'
+  lib: '0'
+  perl: '5.010'
+  strict: '0'
+  version: '0.77'
+  warnings: '0'
 resources:
   bugtracker: https://github.com/jandrew/DateTimeX-Format-Excel/issues
   homepage: https://github.com/jandrew/DateTimeX-Format-Excel
