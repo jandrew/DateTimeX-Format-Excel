@@ -1,5 +1,5 @@
 package DateTimeX::Format::Excel;
-use version 0.77; our $VERSION = version->declare("v0.12.28");
+use version 0.77; our $VERSION = version->declare("v0.12.30");
 use	5.010;
 use	strict;
 use	warnings;
@@ -202,7 +202,7 @@ DateTimeX::Format::Excel - Microsofty conversion of Excel epochs
 </a>
 
 <a>
-	<img src="https://img.shields.io/badge/this version-0.12.28-brightgreen.svg" alt="this version">
+	<img src="https://img.shields.io/badge/this version-v0.12.30-brightgreen.svg" alt="this version">
 </a>
 
 <a href="https://metacpan.org/pod/DateTimeX::Format::Excel">
@@ -217,7 +217,7 @@ DateTimeX::Format::Excel - Microsofty conversion of Excel epochs
 
 =head1 SYNOPSIS
 	
-	#!perl
+	#!/usr/bin/env perl
 	use DateTimeX::Format::Excel;
 
 	# From an Excel date number

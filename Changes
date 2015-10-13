@@ -7,8 +7,12 @@ Uses the change tracking convention
 * Place holder
 
 {{$NEXT}}
-
+	
 	* Another cool change
+
+v0.12.30  2015-10-13 13:17:44-07:00 America/Los_Angeles
+
+	! Added test requires Module::Runtime = 0.014 to resolve a CPAN Testers fail
 
 v0.12.28  2015-09-29 09:25:26-07:00 America/Los_Angeles
 

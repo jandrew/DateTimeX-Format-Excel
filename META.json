@@ -45,6 +45,7 @@
             "Carp" : "0",
             "DateTime" : "0",
             "List::Util" : "1.33",
+            "Module::Runtime" : "0.014",
             "Moose" : "2.1213",
             "MooseX::HasDefaults::RO" : "0",
             "MooseX::StrictConstructor" : "0",
@@ -63,11 +64,11 @@
    "provides" : {
       "DateTimeX::Format::Excel" : {
          "file" : "lib/DateTimeX/Format/Excel.pm",
-         "version" : "v0.12.28"
+         "version" : "v0.12.30"
       },
       "DateTimeX::Format::Excel::Types" : {
          "file" : "lib/DateTimeX/Format/Excel/Types.pm",
-         "version" : "v0.12.28"
+         "version" : "v0.12.30"
       }
    },
    "release_status" : "stable",
@@ -82,7 +83,7 @@
          "web" : "https://github.com/jandrew/DateTimeX-Format-Excel"
       }
    },
-   "version" : "v0.12.28",
+   "version" : "v0.12.30",
    "x_authority" : "cpan:JANDREW"
 }
 
