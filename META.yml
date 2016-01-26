@@ -22,9 +22,10 @@ build_requires:
   version: '0.77'
 configure_requires:
   ExtUtils::MakeMaker: '7.04'
+  Module::Runtime: '0.014'
   Moose: '2.1213'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.037, CPAN::Meta::Converter version 2.150001'
+generated_by: 'Dist::Zilla version 5.043, CPAN::Meta::Converter version 2.150005'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -33,10 +34,10 @@ name: DateTimeX-Format-Excel
 provides:
   DateTimeX::Format::Excel:
     file: lib/DateTimeX/Format/Excel.pm
-    version: v0.12.30
+    version: v0.12.32
   DateTimeX::Format::Excel::Types:
     file: lib/DateTimeX/Format/Excel/Types.pm
-    version: v0.12.30
+    version: v0.12.32
 requires:
   Carp: '0'
   DateTime: '0'
@@ -57,5 +58,5 @@ resources:
   bugtracker: https://github.com/jandrew/DateTimeX-Format-Excel/issues
   homepage: https://github.com/jandrew/DateTimeX-Format-Excel
   repository: https://github.com/jandrew/DateTimeX-Format-Excel.git
-version: v0.12.30
+version: v0.12.32
 x_authority: cpan:JANDREW
