@@ -7,8 +7,13 @@ Uses the change tracking convention
 * Place holder
 
 {{$NEXT}}
-
+	
 	* Another cool change
+
+v0.12.34  2016-02-02 11:49:23-08:00 America/Los_Angeles
+
+	! Eliminated AutoPrereqs and added a specific build Prereq to see if I can fix cpan testers fails
+		http://www.cpantesters.org/cpan/report/cd2a06fa-6c01-1014-9428-48b8d96804e4
 
 v0.12.32  2016-01-26 13:16:01-08:00 America/Los_Angeles
 

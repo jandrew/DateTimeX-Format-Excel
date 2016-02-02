@@ -14,18 +14,12 @@
    },
    "name" : "DateTimeX-Format-Excel",
    "prereqs" : {
-      "configure" : {
-         "requires" : {
-            "ExtUtils::MakeMaker" : "7.04",
-            "Module::Runtime" : "0.014",
-            "Moose" : "2.1213"
-         }
-      },
-      "runtime" : {
+      "build" : {
          "requires" : {
             "Carp" : "0",
             "DateTime" : "0",
             "List::Util" : "1.33",
+            "Module::Runtime" : "0.014",
             "Moose" : "2.1213",
             "MooseX::HasDefaults::RO" : "0",
             "MooseX::StrictConstructor" : "0",
@@ -40,9 +34,15 @@
             "warnings" : "0"
          }
       },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "7.04",
+            "Module::Runtime" : "0.014",
+            "Moose" : "2.1213"
+         }
+      },
       "test" : {
          "requires" : {
-            "Capture::Tiny" : "0",
             "Carp" : "0",
             "DateTime" : "0",
             "List::Util" : "1.33",
@@ -51,9 +51,6 @@
             "MooseX::HasDefaults::RO" : "0",
             "MooseX::StrictConstructor" : "0",
             "Smart::Comments" : "0",
-            "Test::Moose" : "0",
-            "Test::More" : "0",
-            "Test::Most" : "0",
             "Type::Library" : "1.000",
             "Type::Utils" : "0",
             "Types::Standard" : "0",
@@ -65,11 +62,11 @@
    "provides" : {
       "DateTimeX::Format::Excel" : {
          "file" : "lib/DateTimeX/Format/Excel.pm",
-         "version" : "v0.12.32"
+         "version" : "v0.12.34"
       },
       "DateTimeX::Format::Excel::Types" : {
          "file" : "lib/DateTimeX/Format/Excel/Types.pm",
-         "version" : "v0.12.32"
+         "version" : "v0.12.34"
       }
    },
    "release_status" : "stable",
@@ -84,7 +81,7 @@
          "web" : "https://github.com/jandrew/DateTimeX-Format-Excel"
       }
    },
-   "version" : "v0.12.32",
+   "version" : "v0.12.34",
    "x_authority" : "cpan:JANDREW"
 }
 
