@@ -47,13 +47,16 @@ my %WriteMakefileArgs = (
     "MooseX::HasDefaults::RO" => 0,
     "MooseX::StrictConstructor" => 0,
     "Smart::Comments" => 0,
+    "Test::Moose" => 0,
+    "Test::More" => 0,
+    "Test::Most" => 0,
     "Type::Library" => "1.000",
     "Type::Utils" => 0,
     "Types::Standard" => 0,
     "lib" => 0,
     "version" => "0.77"
   },
-  "VERSION" => "v0.12.34",
+  "VERSION" => "v0.12.36",
   "test" => {
     "TESTS" => "t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }
@@ -68,6 +71,9 @@ my %FallbackPrereqs = (
   "MooseX::HasDefaults::RO" => 0,
   "MooseX::StrictConstructor" => 0,
   "Smart::Comments" => 0,
+  "Test::Moose" => 0,
+  "Test::More" => 0,
+  "Test::Most" => 0,
   "Type::Library" => "1.000",
   "Type::Utils" => 0,
   "Types::Standard" => 0,

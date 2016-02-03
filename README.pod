@@ -19,7 +19,7 @@ DateTimeX::Format::Excel - Microsofty conversion of Excel epochs
 </a>
 
 <a>
-	<img src="https://img.shields.io/badge/this version-v0.12.34-brightgreen.svg" alt="this version">
+	<img src="https://img.shields.io/badge/this version-v0.12.36-brightgreen.svg" alt="this version">
 </a>
 
 <a href="https://metacpan.org/pod/DateTimeX::Format::Excel">
