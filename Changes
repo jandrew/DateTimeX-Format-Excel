@@ -10,6 +10,10 @@ Uses the change tracking convention
 
 	* Another cool change
 
+v0.12.38  2016-02-05 14:57:38-08:00 America/Los_Angeles
+
+	! Updates to make Meta.yml pass quality tests
+
 v0.12.36  2016-02-03 11:00:46-08:00 America/Los_Angeles
 
 	! Added Test::More Test::Moose and Test::Most as explicit test requirements
