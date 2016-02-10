@@ -10,6 +10,10 @@ Uses the change tracking convention
 
 	* Another cool change
 
+v0.12.44  2016-02-10 11:54:34-08:00 America/Los_Angeles
+
+	! Bump one more level to clean up tags
+
 v0.12.42  2016-02-10 10:21:07-08:00 America/Los_Angeles
 
 	! Fix the github release badge
