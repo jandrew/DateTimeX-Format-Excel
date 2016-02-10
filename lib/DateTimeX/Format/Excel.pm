@@ -1,5 +1,5 @@
 package DateTimeX::Format::Excel;
-use version 0.77; our $VERSION = version->declare("v0.12.38");
+use version 0.77; our $VERSION = version->declare("v0.12.40");
 use	5.010;
 use	strict;
 use	warnings;
@@ -201,8 +201,8 @@ DateTimeX::Format::Excel - Microsofty conversion of Excel epochs
 	<img src='https://coveralls.io/repos/jandrew/DateTimeX-Format-Excel/badge.svg?branch=master' alt='Coverage Status' />
 </a>
 
-<a>
-	<img src="https://img.shields.io/badge/this version-v0.12.38-brightgreen.svg" alt="this version">
+<a href='https://github.com/jandrew/DateTimeX-Format-Excel'>
+	<img src="https://img.shields.io/github/tag/strongloop/express.svg?label=github version" alt="github version"/>
 </a>
 
 <a href="https://metacpan.org/pod/DateTimeX::Format::Excel">
@@ -512,6 +512,8 @@ B<1.> Add an error attribute to load soft failures or warnings to
 
 B<2.> Convert Smart::Comments to L<Log::Shiras|https://github.com/jandrew/Log-Shiras> debug lines
 
+B<3.> Allow localization as an input to the data so the object output will localize (DateTime::Local)
+
 =back
 
 =head1 AUTHOR
@@ -532,7 +534,7 @@ it and/or modify it under the same terms as Perl itself.
 The full text of the license can be found in the
 LICENSE file included with this module.
 
-This software is copyrighted (c) 2014 - 2015 by Jed Lund
+This software is copyrighted (c) 2014 - 2016 by Jed Lund
 
 =head1 DEPENDENCIES
 

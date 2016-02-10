@@ -10,6 +10,12 @@ Uses the change tracking convention
 
 	* Another cool change
 
+v0.12.40  2016-02-10 09:14:31-08:00 America/Los_Angeles
+
+	! Attempting (again) to resolve a final Kwalitee fail
+	+ Changed the Github tag to see if the version will update in MetaCPAN automatically
+	+ Updated the copyright to include 2016
+
 v0.12.38  2016-02-05 14:57:38-08:00 America/Los_Angeles
 
 	! Updates to make Meta.yml pass quality tests

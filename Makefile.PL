@@ -41,7 +41,27 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "MIN_PERL_VERSION" => "5.010",
   "NAME" => "DateTimeX::Format::Excel",
-  "PREREQ_PM" => {},
+  "PREREQ_PM" => {
+    "Capture::Tiny" => 0,
+    "Carp" => 0,
+    "DateTime" => 0,
+    "List::Util" => "1.33",
+    "Module::Runtime" => "0.014",
+    "Moose" => "2.1213",
+    "MooseX::HasDefaults::RO" => 0,
+    "MooseX::StrictConstructor" => 0,
+    "Smart::Comments" => 0,
+    "Test::Moose" => 0,
+    "Test::More" => 0,
+    "Test::Most" => 0,
+    "Type::Library" => "1.000",
+    "Type::Utils" => 0,
+    "Types::Standard" => 0,
+    "lib" => 0,
+    "strict" => 0,
+    "version" => "0.77",
+    "warnings" => 0
+  },
   "TEST_REQUIRES" => {
     "Carp" => 0,
     "DateTime" => 0,
@@ -60,7 +80,7 @@ my %WriteMakefileArgs = (
     "lib" => 0,
     "version" => "0.77"
   },
-  "VERSION" => "v0.12.38",
+  "VERSION" => "v0.12.40",
   "test" => {
     "TESTS" => "t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }
