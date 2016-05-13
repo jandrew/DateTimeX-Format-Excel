@@ -1,5 +1,5 @@
 package DateTimeX::Format::Excel;
-use version 0.77; our $VERSION = version->declare("v0.12.44");
+use version 0.77; our $VERSION = version->declare("v0.12.46");
 use	5.010;
 use	strict;
 use	warnings;
@@ -117,7 +117,7 @@ sub parse_datetime{
 		$dt->set_time_zone( $timezone );
 	};
 	### <where> - DateTime: $dt
-	
+
     return $dt;
 }
 
@@ -147,7 +147,7 @@ sub format_datetime{
 	### <where> - Should return a date string: $return_string
 	### <where> - Final excel epoch: $excel
 	### <where> - Original DateTime: $date_time
-	
+
     return ( $return_string ) ? $date_time : $excel;
 }
 
@@ -177,7 +177,7 @@ no Moose;
 __PACKAGE__->meta->make_immutable(
 	inline_constructor => 0,
 );
-	
+
 1;
 
 #########1 Documentation      3#########4#########5#########6#########7#########8#########9
@@ -216,7 +216,7 @@ DateTimeX::Format::Excel - Microsofty conversion of Excel epochs
 =end html
 
 =head1 SYNOPSIS
-	
+
 	#!/usr/bin/env perl
 	use DateTimeX::Format::Excel;
 
@@ -240,7 +240,7 @@ DateTimeX::Format::Excel - Microsofty conversion of Excel epochs
 									, hour => 18, minute => 20 );
 	my 	$parser_date = $parser->format_datetime( $dt_with_time );
 	print 	$parser_date ."\n";
-	
+
 	###########################
 	# SYNOPSIS Screen Output
 	# 01: 1970-01-01
@@ -253,100 +253,100 @@ DateTimeX::Format::Excel - Microsofty conversion of Excel epochs
 =head1 DESCRIPTION
 
 Excel uses a different system for its dates than most Unix programs.
-This module allows you to convert between the Excel raw format and
+This package allows you to convert between the Excel raw format and
 and L<DateTime> objects, which can then be further converted via any
 of the other L<DateTime::Format::*
-|https://metacpan.org/search?q=DateTime%3A%3AFormat> modules, or just 
-with L<DateTime>'s methods.  The L<DateTime::Format::Excel> module states 
-"we assume what Psion assumed for their Abacus / Sheet program".  As a 
-consequence the output does not follow exactly the output of Excel.  
-Especially in the Windows range of 0-60.  This module attempts to more 
+|https://metacpan.org/search?q=DateTime%3A%3AFormat> modules, or just
+with L<DateTime>'s methods.  The L<DateTime::Format::Excel> module states
+"we assume what Psion assumed for their Abacus / Sheet program".  As a
+consequence the output does not follow exactly the output of Excel.
+Especially in the Windows range of 0-60.  This module attempts to more
 faithfully follow actual Microsoft Excel with a few notable exceptions.
 
-Excel has a few date quirks. First, it allows two different epochs.  One 
-for the Windows world and one for the Apple world.  The windows epoch 
-starts in 0-January-1900 and allows for 29-February-1900 (both non real 
-dates).  Most of the explanations for the difference between windows 
-implementations and Apple implementations focus on the fact that there 
+Excel has a few date quirks. First, it allows two different epochs.  One
+for the Windows world and one for the Apple world.  The windows epoch
+starts in 0-January-1900 and allows for 29-February-1900 (both non real
+dates).  Most of the explanations for the difference between windows
+implementations and Apple implementations focus on the fact that there
 was no leap year in 1900 L<(the Gregorian vs Julian calendars)
-|http://en.wikipedia.org/wiki/Gregorian_calendar> and the Apple 
-version wanted to skip that issue.  Both non real dates appear to have 
-been a known issue in the original design of VisiCalc that was carried 
+|http://en.wikipedia.org/wiki/Gregorian_calendar> and the Apple
+version wanted to skip that issue.  Both non real dates appear to have
+been a known issue in the original design of VisiCalc that was carried
 through Lotus 1-2-3 and into Excel for L<compatibility
-|http://support.microsoft.com/kb/214326>.  (Spreadsheets were arguably the 
+|http://support.microsoft.com/kb/214326>.  (Spreadsheets were arguably the
 first personal computer killer app and Excel was a L<johnny come lately
-|http://en.wikipedia.org/wiki/Lotus_1-2-3#VisiCalc> trying to gain an entry 
-into the market at the time.)  The closest microsoft discussion I could find 
-on this issue is L<here|http://www.joelonsoftware.com/items/2006/06/16.html>.  
-In any case the apple version starts 1-January-1904. (counting from 0 while 
-also avoiding the leap year issue).  In both cases the Windows and Apple 
-version use integers from the epoch start to represent days and the decimal 
-portion to represent a portion of a day.  Both Windows and Apple Excel will 
-attempt to convert recognized date strings to an Excel epoch for storage with 
-the exception that any date prior to the epoch start will be stored as a 
-string.  (31-December-1899 and earlier for Windows and 31-December-1903 and 
-earlier for Apple).  Next, Excel does not allow for a time zone component of 
-each number. Finally, in the Windows version when dealing with epochs that 
-do not have a date component just a time component all values will fall 
+|http://en.wikipedia.org/wiki/Lotus_1-2-3#VisiCalc> trying to gain an entry
+into the market at the time.)  The closest microsoft discussion I could find
+on this issue is L<here|http://www.joelonsoftware.com/items/2006/06/16.html>.
+In any case the apple version starts 1-January-1904. (counting from 0 while
+also avoiding the leap year issue).  In both cases the Windows and Apple
+version use integers from the epoch start to represent days and the decimal
+portion to represent a portion of a day.  Both Windows and Apple Excel will
+attempt to convert recognized date strings to an Excel epoch for storage with
+the exception that any date prior to the epoch start will be stored as a
+string.  (31-December-1899 and earlier for Windows and 31-December-1903 and
+earlier for Apple).  Next, Excel does not allow for a time zone component of
+each number. Finally, in the Windows version when dealing with epochs that
+do not have a date component just a time component all values will fall
 between 0 and 1 which is a non real date (0-January-1900).
 
 =head2 Caveat utilitor
 
-This explanation is not intended to justify Microsofts decisions with Excel 
-dates just replicate them as faithfully as possible.  This module makes the 
-assumption that you already know if your date is a string or a number in Excel 
-and that you will handle string to DateTime conversions elsewhere. see 
-L<DateTime::Format::Flexible>.  Any passed strings will die.  (As a failure 
-of a L<Type::Tiny> test)  This module also makes several unilateral decisions 
-to deal with corner cases.  When a 0 date is requested to be converted to 
-DateTime it will use L<Carp> to cluck that it received a bad date and then 
-provide a DateTime object dated 1-January-1900 (Excel would provide 
-0-January-1900).  If a value between 0 and 1 is requested to be converted to 
-a DateTime object the module will B<NOT> cluck and provide an object dated 
-1-January-1900 with the appropriate time component. All Apple times are provide 
-as 1-January-1904.  Any requested numerical conversion for Windows >= 60 and 
-< 61 will cluck and provide a DateTime object dated 1-March-1900 (Excel would 
-provide 29-Febrary-1900).  All requests for conversion of negative numbers to 
-DateTime objects will die .  If a DateTime object is provided for conversion 
-to the Excel value and it falls earlier than 1-January-1900 for Windows and 
-1-January-1904 for Apple then the DateTime object itself will be returned.  
-If you accept the output of that L<method|/format_datetime( $date_time )> 
-as a scalar, DateTime will stringify itself and give you a text equivalent 
-date.  For time zones you can L<pass|/parse_datetime( @arg_list )> a time zone 
-with the excel number for conversion to the DateTime object.  In reverse, 
+This explanation is not intended to justify Microsofts decisions with Excel
+dates just replicate them as faithfully as possible.  This module makes the
+assumption that you already know if your date is a string or a number in Excel
+and that you will handle string to DateTime conversions elsewhere. see
+L<DateTime::Format::Flexible>.  Any passed strings will die.  (As a failure
+of a L<Type::Tiny> test)  This module also makes several unilateral decisions
+to deal with corner cases.  When a 0 date is requested to be converted to
+DateTime it will use L<Carp> to cluck that it received a bad date and then
+provide a DateTime object dated 1-January-1900 (Excel would provide
+0-January-1900).  If a value between 0 and 1 is requested to be converted to
+a DateTime object the module will B<NOT> cluck and provide an object dated
+1-January-1900 with the appropriate time component. All Apple times are provide
+as 1-January-1904.  Any requested numerical conversion for Windows >= 60 and
+< 61 will cluck and provide a DateTime object dated 1-March-1900 (Excel would
+provide 29-Febrary-1900).  All requests for conversion of negative numbers to
+DateTime objects will die .  If a DateTime object is provided for conversion
+to the Excel value and it falls earlier than 1-January-1900 for Windows and
+1-January-1904 for Apple then the DateTime object itself will be returned.
+If you accept the output of that L<method|/format_datetime( $date_time )>
+as a scalar, DateTime will stringify itself and give you a text equivalent
+date.  For time zones you can L<pass|/parse_datetime( @arg_list )> a time zone
+with the excel number for conversion to the DateTime object.  In reverse,
 the conversion to Excel Epoch uses the L<-E<gt>jd
-|https://metacpan.org/pod/DateTime#dt-jd-dt-mjd> method for calculation so 
-the time zone is stripped out.  No clone or duration calculations are provided 
-with this module.  Finally this is a L<Moose> based module and does 
-not provide a functional interface. I<(Moose would allow it I just chose not 
+|https://metacpan.org/pod/DateTime#dt-jd-dt-mjd> method for calculation so
+the time zone is stripped out.  No clone or duration calculations are provided
+with this module.  Finally this is a L<Moose> based module and does
+not provide a functional interface. I<(Moose would allow it I just chose not
 to for design purposes)>.
 
-The Types module for this package uses L<Type::Tiny> which can, in the background, 
-use L<Type::Tiny::XS>.  While in general this is a good thing you will need to make 
-sure that Type::Tiny::XS is version 0.010 or newer since the older ones didn't support 
+The Types module for this package uses L<Type::Tiny> which can, in the background,
+use L<Type::Tiny::XS>.  While in general this is a good thing you will need to make
+sure that Type::Tiny::XS is version 0.010 or newer since the older ones didn't support
 the 'Optional' method.
 
 =head2 Attributes
 
-Data passed to new when creating an instance (parser).  For modification of 
+Data passed to new when creating an instance (parser).  For modification of
 these attributes see the listed L</Methods> of the instance.
 
 =head3 system_type
 
 =over
 
-B<Definition:> This attribute identifies whether the translation will be done 
+B<Definition:> This attribute identifies whether the translation will be done
 for Windows Excel => 'win_excel' or Apple Excel => 'apple_excel'.
 
 B<Default> win_excel (0-January-1900T00:00:00 = 0, range includes 29-February-1900)
 
 B<Range> win_excel|apple_excel (1-January-1904T00:00:00 = 0)
-		
+
 =back
 
 =head2 Methods
 
-These include methods to adjust attributes as well as providing methods to 
+These include methods to adjust attributes as well as providing methods to
 provide the conversion functionality of the module.
 
 =head3 get_system_type
@@ -411,10 +411,10 @@ B<Returns:> An excel epoch number or DateTime object if it is before the relevan
 
 =head2 A note on text dates
 
-Dates saved in Excel prior to 1-January-1900 for Windows or 1-January-1904 for Apple are stored as text. 
-I suggest using L<Type::Tiny::Manual::Coercions/Chained Coercions>.  Or use an Excel reader 
-that implements this for you like L<Spreadsheet::XLSX::Reader::LibXML> (self promotion).  
-Here is one possible way to integrate text and dates in the same field into a consistent DateTime 
+Dates saved in Excel prior to 1-January-1900 for Windows or 1-January-1904 for Apple are stored as text.
+I suggest using L<Type::Tiny::Manual::Coercions/Chained Coercions>.  Or use an Excel reader
+that implements this for you like L<Spreadsheet::XLSX::Reader::LibXML> (self promotion).
+Here is one possible way to integrate text and dates in the same field into a consistent DateTime
 output. (I know it's a bit clunky but it's a place to start)
 
 	my $system_lookup = {
@@ -423,7 +423,7 @@ output. (I know it's a bit clunky but it's a place to start)
 		};
 	my	@args_list	= ( system_type => $system_lookup->{$workbook->get_epoch_year} );
 	my	$converter	= DateTimeX::Format::Excel->new( @args_list );
-	my	$string_via	= sub{ 
+	my	$string_via	= sub{
 							my	$str = $_[0];
 							return DateTime::Format::Flexible->parse_datetime( $str );
 						};
@@ -450,7 +450,7 @@ output. (I know it's a bit clunky but it's a place to start)
 				type_coercion_map =>[
 					$date_time_type->coercibles, sub{
 						my $tmp = $date_time_type->coerce( $_ );
-						$tmp->format_cldr( 'yyyy-MM-dd' ) 
+						$tmp->format_cldr( 'yyyy-MM-dd' )
 					},
 				],
 			),
@@ -465,9 +465,9 @@ Iain Truskett, Dave Rolsky, and Achim Bursian for maintaining L<DateTime::Format
 Peter (Stig) Edwards and Bobby Metz for contributing to L<DateTime::Format::Excel>.
 
 =head1 Build/Install from Source
-	
+
 B<1.> Download a compressed file with the code
-	
+
 B<2.> Extract the code from the compressed file.  If you are using tar this should work:
 
         tar -zxvf DateTimeX-Format-Excel-v1.xx.tar.gz
@@ -483,7 +483,7 @@ B<4.> Run the following commands
 	perl  -V:make
 
 (then for Windows substitute the correct make function (s/make/dmake/g)?)
-	
+
 =back
 
 	>perl Makefile.PL

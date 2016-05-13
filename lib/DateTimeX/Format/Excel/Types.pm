@@ -1,5 +1,5 @@
 package DateTimeX::Format::Excel::Types;
-use version; our $VERSION = version->declare("v0.12.44");
+use version; our $VERSION = version->declare("v0.12.46");
 use	5.010;
 use strict;
 use warnings;
@@ -66,7 +66,7 @@ declare ExcelEpoch,
 		( !is_Num( $_ ) )	? "-$_- is not a Number" :
 							  "-$_- is less than 0"
 	};
-	
+
 declare SystemName,
 	as Str,
 	where{ $_ =~ /^(win_excel|apple_excel)$/ };
@@ -80,7 +80,7 @@ declare SystemName,
 
 
 #########1 Phinish            3#########4#########5#########6#########7#########8#########9
-	
+
 1;
 
 #########1 Documentation      3#########4#########5#########6#########7#########8#########9
@@ -89,20 +89,20 @@ __END__
 =head1 NAME
 
 DateTimeX::Format::Excel::Types::Types - A Type::Tiny Excel DateTime type library
-    
+
 =head1 DESCRIPTION
 
-This is a type library for L<DateTimeX::Format::Excel> It doesn't really have good context 
-outside of that.  It is built on L<Type::Tiny>.   
+This is a type library for L<DateTimeX::Format::Excel> It doesn't really have good context
+outside of that.  It is built on L<Type::Tiny>.
 
 =head2 L<Caveat utilitor|http://en.wiktionary.org/wiki/Appendix:List_of_Latin_phrases_(A%E2%80%93E)#C>
 
-All type tests included with this package are considered to be the fixed definition of 
+All type tests included with this package are considered to be the fixed definition of
 the types.  Any definition not included in the testing is considered flexible.
 
-This module uses L<Type::Tiny> which can, in the background, use L<Type::Tiny::XS>.  
-While in general this is a good thing you will need to make sure that 
-Type::Tiny::XS is version 0.010 or newer since the older ones didn't support the 
+This module uses L<Type::Tiny> which can, in the background, use L<Type::Tiny::XS>.
+While in general this is a good thing you will need to make sure that
+Type::Tiny::XS is version 0.010 or newer since the older ones didn't support the
 'Optional' method.
 
 =head2 Types
@@ -114,7 +114,7 @@ Type::Tiny::XS is version 0.010 or newer since the older ones didn't support the
 B<Definition:> How to know if a hash meets the DateTime hash requirements
 
 B<Range>
-	
+
 	Dict[
 		year       => Int,
 		month      => Optional[ Int ],

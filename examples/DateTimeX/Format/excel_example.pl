@@ -1,5 +1,5 @@
-#!perl
-use lib '../lib';
+#!/usr/bin/env perl
+use lib '../../../lib';
 use DateTimeX::Format::Excel;
 
 # From an Excel date number

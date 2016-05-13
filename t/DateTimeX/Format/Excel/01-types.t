@@ -13,14 +13,14 @@ use	Test::Most tests => 14;
 use	Test::Moose;
 use	DateTime;
 use	lib '../../../../lib',;
-use	DateTimeX::Format::Excel::Types v0.12 qw(
+use	DateTimeX::Format::Excel::Types qw(
 		DateTimeHash
 		DateTimeInstance
 		HashToDateTime
 		ExcelEpoch
 		SystemName
 );
-my  ( 
+my  (
 			$position,
 	);
 my 			$row = 0;
