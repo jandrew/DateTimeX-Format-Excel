@@ -10,6 +10,11 @@ Uses the change tracking convention
 
 	* Another cool change
 
+v0.12.48  2016-05-14 20:23:47-07:00 America/Los_Angeles
+
+	! Fixed a Module::Runtime requirement fail  0.014 from 0.14
+	+ Added 5.22 test coverage to travis.yml
+
 v0.12.46  2016-05-13 16:37:55-07:00 America/Los_Angeles
 
 	+ Changed the dist.ini file back to using [AutoPrereqs]

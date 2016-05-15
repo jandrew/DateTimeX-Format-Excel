@@ -22,7 +22,7 @@ my %WriteMakefileArgs = (
     "Carp" => 0,
     "DateTime" => 0,
     "List::Util" => "1.33",
-    "Module::Runtime" => "0.14",
+    "Module::Runtime" => "0.014",
     "Moose" => "2.1213",
     "MooseX::HasDefaults::RO" => 0,
     "MooseX::StrictConstructor" => 0,
@@ -42,7 +42,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Test::Most" => 0
   },
-  "VERSION" => "v0.12.46",
+  "VERSION" => "v0.12.48",
   "test" => {
     "TESTS" => "t/DateTimeX/Format/*.t t/DateTimeX/Format/Excel/*.t"
   }
@@ -53,7 +53,7 @@ my %FallbackPrereqs = (
   "Carp" => 0,
   "DateTime" => 0,
   "List::Util" => "1.33",
-  "Module::Runtime" => "0.14",
+  "Module::Runtime" => "0.014",
   "Moose" => "2.1213",
   "MooseX::HasDefaults::RO" => 0,
   "MooseX::StrictConstructor" => 0,
