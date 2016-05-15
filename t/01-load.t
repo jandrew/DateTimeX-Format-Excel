@@ -16,6 +16,6 @@ BEGIN{ $ENV{PERL_TYPE_TINY_XS} = 0; };
 BEGIN{ use_ok(	Type::Utils ) };
 BEGIN{ use_ok(	Type::Library ) };
 BEGIN{ use_ok(	Types::Standard ) };
-BEGIN{ use_ok( DateTimeX::Format::Excel::Types, 0.012 ) };
-BEGIN{ use_ok( DateTimeX::Format::Excel, 0.012 ) };
+BEGIN{ use_ok( DateTimeX::Format::Excel::Types, 0.014 ) };
+BEGIN{ use_ok( DateTimeX::Format::Excel, 0.014 ) };
 done_testing();

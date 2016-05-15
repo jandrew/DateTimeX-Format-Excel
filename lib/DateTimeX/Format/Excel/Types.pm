@@ -1,5 +1,5 @@
 package DateTimeX::Format::Excel::Types;
-use version; our $VERSION = version->declare("v0.12.48");
+use version; our $VERSION = version->declare("v0.14.0");
 use	5.010;
 use strict;
 use warnings;

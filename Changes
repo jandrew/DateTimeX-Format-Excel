@@ -10,6 +10,10 @@ Uses the change tracking convention
 
 	* Another cool change
 
+v0.14.0   2016-05-14 21:00:48-07:00 America/Los_Angeles
+
+	! Fix the commit tag since it was confusing
+
 v0.12.48  2016-05-14 20:23:47-07:00 America/Los_Angeles
 
 	! Fixed a Module::Runtime requirement fail  0.014 from 0.14
